@@ -26,7 +26,7 @@ $ npm install
 ###How to run the tests
 
 ```sh
-$ npm start
+$ npm test
 ```
 
 ###Technologies used
