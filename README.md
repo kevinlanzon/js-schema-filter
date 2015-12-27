@@ -7,7 +7,7 @@ A very basic JavaScript filter that takes JSON API in and outputs JSON API, with
 
 ### To do
 
-- [] Filter out nested keywords
+- Filter out nested non schema keywords
 
 ###Resources
 
