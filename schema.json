@@ -7,7 +7,11 @@
     "id": {
       "description": "The unique identifier for a customer",
       "type": "number"
+    },
+    "name": {
+      "description": "Name of customer",
+      "type": "string"
     }
   },
-  "required": ["id"]
+  "required": ["id", "name"]
 }
