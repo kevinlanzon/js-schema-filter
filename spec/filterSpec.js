@@ -44,4 +44,11 @@ describe('JSON Filter', function() {
     var newObj = filter(schema, newJson);
     expect(newObj).toEqual(newJson);
   });
+
+  it('returns only matching schema types', function() {
+    var json = { "type" : "object" };
+    var filteredData = filter(schema, json);
+    expect(filteredData).toEqual(json);
+  });
+
 });
