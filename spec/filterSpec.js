@@ -51,8 +51,7 @@ describe('JSON Filter', function() {
       "last_name" : "Lanzon"
     }
     var newJson = filter(schema, json);
-    expect(newJson).toEqual({ "first_name" : "Kevin",
-      "last_name" : "Lanzon"});
+    expect(newJson).toEqual(json);
   });
 
   it('should not return non matching schema keywords', function() {
