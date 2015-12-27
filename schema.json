@@ -4,14 +4,9 @@
   "description": "Customer data for our application",
   "type": "object",
   "properties": {
-    "id": {
-      "description": "The unique identifier for a customer",
-      "type": "number"
-    },
-    "name": {
-      "description": "Name of customer",
-      "type": "string"
-    }
+    "id":         {"type": "number"},
+    "first_name": {"type": "string"},
+    "last_name":  {"type": "string"}
   },
-  "required": ["id", "name"]
+  "required": ["id", "first_name", "last_name"]
 }
