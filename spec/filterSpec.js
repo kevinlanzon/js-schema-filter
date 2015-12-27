@@ -40,15 +40,31 @@ describe('JSON Filter', function() {
 }
 
   it('returns the complete json data', function() {
-    var newJson = { "first_name" : "Kev" }
-    var newObj = filter(schema, newJson);
-    expect(newObj).toEqual(newJson);
+    var json = { "first_name" : "Kev" }
+    var newJson = filter(schema, json);
+    expect(newJson).toEqual(json);
   });
 
-  it('returns only matching schema types', function() {
-    var json = { "type" : "object" };
-    var filteredData = filter(schema, json);
-    expect(filteredData).toEqual(json);
+  it('returns matching schema keywords', function() {
+    var json = {
+      "first_name" : "Kevin",
+      "last_name" : "Lanzon"
+    }
+    var newJson = filter(schema, json);
+    expect(newJson).toEqual({ "first_name" : "Kevin",
+      "last_name" : "Lanzon"});
+  });
+
+  it('should not return non matching schema keywords', function() {
+    var json = {
+      "first_name" : "Kevin",
+      "last_name" : "Lanzon",
+      "contact_number": "123456789",
+      "ignore": "this property"
+    }
+    var newJson = filter(schema, json);
+    expect(newJson).toEqual({ "first_name" : "Kevin",
+      "last_name" : "Lanzon", "contact_number": "123456789"});
   });
 
 });
